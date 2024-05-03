@@ -1,16 +1,18 @@
 package org.example;
-
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 public class Prodejci {
-    private String jmeno;
-    private String narozeni;
-    private double smlouvy;
-    private double mrkev;
-    private String mesto;
-    private String spz;
-    private double spotreba;
-    private String IP;
+    private final String jmeno;
+    private final Datum narozeni;
+    private final double smlouvy;
+    private final double mrkev;
+    private final String mesto;
+    private final String spz;
+    private final double spotreba;
+    private final String IP;
 
-    public Prodejci(String jmeno, String narozeni, double smlouvy, double mrkev, String mesto, String spz, double spotreba, String IP){
+    public Prodejci(String jmeno, Datum narozeni, double smlouvy, double mrkev, String mesto, String spz, double spotreba, String IP){
         this.jmeno=jmeno;
         this.narozeni=narozeni;
         this.smlouvy=smlouvy;
@@ -31,7 +33,7 @@ public class Prodejci {
     public String getJmeno(){
         return this.jmeno;
     }
-    public String getNarozeni(){
+    public Datum getNarozeni(){
         return this.narozeni;
     }
     public String getMesto(){

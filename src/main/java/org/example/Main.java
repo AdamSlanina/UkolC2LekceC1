@@ -1,12 +1,11 @@
 package org.example;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         ArrayList<Prodejci>list = new ArrayList<>();
-        Prodejci prodejce1 = new Prodejci("Tomáš","15. 5. 1984", 15,0.5,"Brno","8BR984",7.5,"192.168.48.39");
+        Prodejci prodejce1 = new Prodejci("Tomáš",new Datum("1995-05-05"), 15,0.5,"Brno","8BR984",7.5,"192.168.48.39");
         list.add(prodejce1);
         System.out.println(prodejce1);
         System.out.println(prodejce1.prumerNaSmlouvu());
@@ -18,7 +17,7 @@ public class Main {
             if(input.equals("stop")){
                 break;
             }
-            System.out.println("Narození:");
+            System.out.println("Narození: (formát YY-MM-DD)");
             String narozeni = scanner.nextLine();
             System.out.println("Počet smluv: ");
             String smlouvy = scanner.nextLine();
@@ -35,13 +34,13 @@ public class Main {
             double spotrebaDouble = Double.parseDouble(spotreba);
             System.out.println("IP: ");
             String IP = scanner.nextLine();
-            list.add(new Prodejci(input,narozeni,smlouvyDouble,mrkevDouble,mesto,spz,spotrebaDouble,IP));
+            list.add(new Prodejci(input,new Datum(narozeni),smlouvyDouble,mrkevDouble,mesto,spz,spotrebaDouble,IP));
         }
 
         for (Prodejci prodejci : list) {
             System.out.println(prodejci);
             System.out.println(prodejci.prumerNaSmlouvu());
-            System.out.println("");
+            System.out.println();
         }
     }
 }
