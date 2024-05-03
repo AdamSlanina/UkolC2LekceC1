@@ -1,7 +1,5 @@
 package org.example;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+
 public class Prodejci {
     private final String jmeno;
     private final Datum narozeni;

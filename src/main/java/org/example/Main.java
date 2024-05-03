@@ -17,8 +17,11 @@ public class Main {
             if(input.equals("stop")){
                 break;
             }
-            System.out.println("Narození: (formát YY-MM-DD)");
-            String narozeni = scanner.nextLine();
+            String narozeni = "";
+            do{
+                System.out.println("Narození: (formát YYYY-MM-DD)");
+                narozeni=scanner.nextLine();
+            }while(!narozeni.matches("\\d{4}-\\d{2}-\\d{2}"));
             System.out.println("Počet smluv: ");
             String smlouvy = scanner.nextLine();
             double smlouvyDouble = Double.parseDouble(smlouvy);
